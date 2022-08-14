@@ -4,6 +4,7 @@ console.log("this is separate JS file");
 {/* <button onclick="console.log(5)">Another Button </button> */ }
 
 // Option: 2 add click function
+// Important: We will use this
 function makeRed() {
     document.body.style.backgroundColor = 'red';
 }
@@ -27,3 +28,12 @@ function makePink() {
 }
 
 // Option: 4 Another
+const makeGreenButton = document.getElementById('make-green')
+makeGreenButton.addEventListener('click', function makeGreen() {
+    document.body.style.backgroundColor = 'green';
+})
+
+// Option: 4 Final
+document.getElementById('make-golden-rod').addEventListener('click', function () {
+    document.body.style.backgroundColor = 'goldenrod';
+})    
