@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubble</title>
+    <style>
+        ul{
+            border: 1px solid red;
+        }
+        body{
+            border: 1px solid green;
+        }
+        section{
+            border: 1px solid blue;
+        }
+        #item-2{
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body id="body">
+    <h1>Exploring event Bubble</h1>
+    <section id="list-container">
+        <ul id="list-ul">
+            <li id="item-1">Lorem, ipsum.</li>
+            <li id="item-2">Ipsa, quae.</li>
+            <li id="item-3">Fuga, assumenda.</li>
+            <li id="item-4">Possimus, repudiandae!</li>
+            <li id="item-5">Corporis, consequuntur.</li>
+            <li id="item-6">Odio, commodi?</li>
+        </ul>
+    </section>
+    <script>
+        document.getElementById('item-2').addEventListener('click', function(event){
+            console.log('item-2 clicked');
+            event.stopImmediatePropagation();
+        });
+        document.getElementById('list-ul').addEventListener('click', function(){
+            console.log('list-ul clicked');
+        });
+        document.getElementById('list-container').addEventListener('click', function(){
+            console.log('list-container clicked');
+            event.st
+        });
+        document.getElementById('body').addEventListener('click', function(){
+            console.log('html full body clicked');
+        });
+    </script>
+</body>
+</html>
